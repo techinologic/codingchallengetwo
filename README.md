@@ -1,4 +1,4 @@
-# coppincs-codingchallengetwo
+# codingchallengetwo
 ### Coppin CS Coding Challenge 2
 ### Design Recipe: [Google Sheets](https://docs.google.com/spreadsheets/d/1z319G1A6gzEs1qKCGCLF37YZForKBEThOXce5bEnv2Q/edit?usp=sharing)
 
