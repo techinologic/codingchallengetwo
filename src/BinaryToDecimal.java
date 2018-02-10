@@ -1,38 +1,54 @@
-/*
- * Paolo T. Inocencion
- * Coding Challenge 2
+/**
+ * Convert Binary to Decimal
+ * BinaryToDecimal converts user inputted
+ * binary numbers into decimal.
  *
- * Write a program in your preferred language that consumes a binary
- * number and produces its decimal equivalent. (40 points)
+ * @author  Paolo T. Inocencion
+ * @version 1.0
+ * @since   2018-02-09
  */
 
 import java.util.Scanner;
 
 public class BinaryToDecimal {
 
+    /**
+     * The main method which makes use of convertToDecimal method.
+     * @param args Unused.
+     * @exception NumberFormatException On non-binary input.
+     * @see NumberFormatException
+     */
     public static void main(String[] args) {
 
         //Scanner that will take binary digits from user,
         Scanner sc = new Scanner(System.in);
 
         // keep looping if input is not 0 or 1 only
-        while (true) {
-            System.out.println("Enter a binary number: ");
+        System.out.print("Enter a binary number: ");
 
-            //store the input as Strings in string
-            String input = sc.nextLine();
+        //store the input as Strings in string
+        String input = sc.nextLine();
 
-            // regex if input contains anything other than 1's and 0's, loop
-            if (input.matches("[01]+")) {
-                System.out.println(input + " in Decimal is: "
-                        + Integer.parseInt(input, 2));
-                //parse the string into integer base 10, output result.
-                break;
-            }
-            else
-                System.out.println("Enter binary numbers only.\n");
-
+        // validate input, print decimal value,
+        // print exception if input is not binary
+        try {
+            System.out.println("Decimal: " + convertToDecimal(input));
+        } catch (NumberFormatException e) {
+            //raise exception and output what error.
+            System.err.println("NumberFormatException: "
+                    + e.getMessage());
         }
     }
 
+    /**
+     * This method is used convert input binary string from
+     * a base 2, to a decimal value using the parseInt method.
+     * The int value will be multiplied to 1.0 to become a double.
+     * @param input only parameter, came from user input.
+     * @return double This returns decimal value of string.
+     */
+    public static double convertToDecimal(String input) {
+
+        return (Integer.parseInt(input, 2) * 1.0);
+    }
 }
